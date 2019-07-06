@@ -31,15 +31,15 @@ const recursiveFunc = (array, index) => {
 //     }
 // }
 
-const recurseFunc = (arr, idx, spaces) => {
+const recurseFunc = (arr, idx, levels) => {
     if (arr[idx]) {
         if (Array.isArray(arr[idx])) {
-            recurseFunc(arr[idx], 0, spaces + 1);
+            recurseFunc(arr[idx], 0, levels + 1);
         } else {
-            const indent = '- '.repeat(spaces);
+            const indent = '- '.repeat(levels);
             console.log(`${indent}${arr[idx]}`);
         }
-        recurseFunc(arr, idx + 1, spaces);
+        recurseFunc(arr, idx + 1, levels);
     }
 };
 
